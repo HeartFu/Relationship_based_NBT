@@ -1,0 +1,70 @@
+Namespace(att_feat_size=2048, att_hid_size=512, att_model='topdown', batch_size=100, beam_size=1, cached_tokens='coco-train-idxs', cbs=False, cbs_mode='all', cbs_tag_size=3, checkpoint_path='save/bs100_implicit_shuffles/', cider_df='corpus', cnn_backend='res101', cnn_learning_rate=1e-05, cnn_optim='adam', cnn_optim_alpha=0.8, cnn_optim_beta=0.999, cnn_weight_decay=0, cuda=True, data_path='data', dataset='coco', decode_noc=False, det_oracle=False, dir_num=2, disp_interval=100, drop_prob_lm=0.5, fc_feat_size=2048, finetune_cnn=False, fixed_block=1, grad_clip=0.1, id='', image_crop_size=512, image_path='/import/nobackup_mmv_ioannisp/shared/datasets/coco2014/images', image_size=576, imp_model=True, imp_pos_emb_dim=64, imp_pro=0.5, imp_start_from='save/bs100_implicit_res', inference_only=False, inplace=True, input_dic='data/coco/dic_coco.json', input_encoding_size=512, input_json='data/coco/cap_coco.json', label_bias=False, language_eval=1, learning_rate=0.0005, learning_rate_decay_every=3, learning_rate_decay_rate=0.8, learning_rate_decay_start=1, load_best_score=1, losses_log_every=10, mGPUs=False, max_epochs=30, nongt_dim=20, num_heads=16, num_layers=1, num_steps=1, num_workers=1, optim='adam', optim_alpha=0.9, optim_beta=0.999, optim_epsilon=1e-08, path_opt='cfgs/normal_coco_res101.yml', ppls_thresh=0.5, proposal_h5='data/coco/coco_detection.h5', relation_dim=1024, relation_type='spatial', residual_connection=False, rnn_size=1024, rnn_type='lstm', scheduled_sampling_increase_every=5, scheduled_sampling_increase_prob=0.05, scheduled_sampling_max_prob=0.25, scheduled_sampling_start=-1, self_critical=False, sem_label_num=15, sem_model=True, sem_pro=0.5, sem_start_from='save/bs100_semantic', semantic_path='data/coco/relationship/sematic_info.json', seq_length=20, seq_per_img=5, spa_label_num=11, spa_model=False, spa_pro=0.3, spa_start_from='save/bs100_spatial', spatial_path='data/coco/relationship/spatial_info.json', start_from=None, val_every_epoch=3, val_images_use=-1, val_split='test', weight_decay=0)
+DataLoader loading json file:  data/coco/dic_coco.json
+vocab size is  9488
+DataLoader loading json file:  data/coco/cap_coco.json
+loading annotations into memory...
+Done (t=10.22s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=6.18s)
+creating index...
+index created!
+assigned 5000 images to split test
+Loading pretrained weights from data/imagenet_weights/resnet101.pth
+In ImplicitRelationEncoder, num of graph propogate steps: 1, residual_connection: False
+Loading the model weights, path is save/bs100_implicit_res/model-best.pth...
+Loading pretrained weights from data/imagenet_weights/resnet101.pth
+In ExplicitRelationEncoder, num of graph propogation steps: 1, residual_connection: False
+Loading the model weights, path is save/bs100_semantic/model-best.pth...
+image 391895: a man riding a motorcycle on a dirt road 
+image 60623: a woman sitting at a table with a bowl of food 
+image 483108: a person riding a bike down a street next to a train 
+image 384213: a kitchen with a sink and a window 
+image 386164: a wooden table topped with lots of wooden spooning 
+image 223648: a wooden table with a wooden chair and a wooden table 
+image 403385: a bathroom with a toilet sink and shower 
+image 294832: a bathroom with a toilet sink and shower 
+image 462565: a group of people riding bikes down a street 
+image 436141: a bathroom with a toilet sink and mirror 
+image 192440: a bathroom with a toilet sink and mirror 
+image 1146: a man in a suit and tie standing in front of a wall 
+image 559665: a man riding a motorcycle with a woman on the back 
+image 394240: a motorcycle parked on the side of a road next to a building 
+image 491497: a bed with a white bedspread and a television 
+image 184791: a painting of a bowl of fruit and a mirror 
+image 579664: a bunch of banana are in a basket 
+image 550529: a motorcycle parked on a shelf in front of a store 
+image 348881: a large jet sitting on top of a tarmac 
+image 560623: a view of a plane window and planes on the tarmac 
+Total image to be evaluated 5000
+loading annotations into memory...
+Done (t=0.30s)
+creating index...
+index created!
+using 5000/5000 predictions
+Loading and preparing results...
+DONE (t=0.03s)
+creating index...
+index created!
+tokenization...
+setting up scorers...
+computing Bleu score...
+{'testlen': 48635, 'reflen': 48047, 'guess': [48635, 43635, 38635, 33635], 'correct': [36013, 19342, 9213, 4303]}
+ratio: 1.0122380169417236
+Bleu_1: 0.740
+Bleu_2: 0.573
+Bleu_3: 0.428
+Bleu_4: 0.3176
+computing Rouge score...
+ROUGE_L: 0.544
+computing CIDEr score...
+CIDEr: 1.030
+Saving the predictions
+print the evaluation:
+Bleu_1:0.7404749665878331
+Bleu_2:0.5729126210903733
+Bleu_3:0.42775882487453487
+Bleu_4:0.317332790191183
+ROUGE_L:0.5444367967947299
+CIDEr:1.0295241267808801

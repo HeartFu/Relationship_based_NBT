@@ -1,0 +1,67 @@
+Namespace(att_feat_size=2048, att_hid_size=512, att_model='topdown', batch_size=100, beam_size=3, cached_tokens='coco-train-idxs', cbs=False, cbs_mode='all', cbs_tag_size=3, checkpoint_path='save/bs100_implicit_shuffles/', cider_df='corpus', cnn_backend='res101', cnn_learning_rate=1e-05, cnn_optim='adam', cnn_optim_alpha=0.8, cnn_optim_beta=0.999, cnn_weight_decay=0, cuda=True, data_path='data', dataset='coco', decode_noc=False, det_oracle=False, dir_num=2, disp_interval=100, drop_prob_lm=0.5, fc_feat_size=2048, finetune_cnn=False, fixed_block=1, grad_clip=0.1, id='', image_crop_size=512, image_path='/import/nobackup_mmv_ioannisp/shared/datasets/coco2014/images', image_size=576, imp_pos_emb_dim=64, inference_only=False, inplace=True, input_dic='data/coco/dic_coco.json', input_encoding_size=512, input_json='data/coco/cap_coco.json', label_bias=False, language_eval=1, learning_rate=0.0005, learning_rate_decay_every=3, learning_rate_decay_rate=0.8, learning_rate_decay_start=1, load_best_score=1, losses_log_every=10, mGPUs=False, max_epochs=30, nongt_dim=20, num_heads=16, num_layers=1, num_steps=1, num_workers=1, optim='adam', optim_alpha=0.9, optim_beta=0.999, optim_epsilon=1e-08, path_opt='cfgs/normal_coco_res101.yml', ppls_thresh=0.5, proposal_h5='data/coco/coco_detection.h5', relation_dim=1024, relation_type='semantic', residual_connection=False, rnn_size=1024, rnn_type='lstm', scheduled_sampling_increase_every=5, scheduled_sampling_increase_prob=0.05, scheduled_sampling_max_prob=0.25, scheduled_sampling_start=-1, self_critical=False, sem_label_num=15, semantic_path='data/coco/relationship/sematic_info.json', seq_length=20, seq_per_img=5, spa_label_num=11, spatial_path='data/coco/relationship/spatial_info.json', start_from='save/bs100_semantic', val_every_epoch=3, val_images_use=-1, val_split='test', weight_decay=0)
+DataLoader loading json file:  data/coco/dic_coco.json
+vocab size is  9488
+DataLoader loading json file:  data/coco/cap_coco.json
+loading annotations into memory...
+Done (t=10.05s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=4.96s)
+creating index...
+index created!
+assigned 5000 images to split test
+Loading pretrained weights from data/imagenet_weights/resnet101.pth
+In ExplicitRelationEncoder, num of graph propogation steps: 1, residual_connection: False
+Loading the model weights, path is save/bs100_semantic/model-best.pth...
+image 391895: a man riding a motorcycle on a dirt road 
+image 60623: a woman sitting at a table with a bowl of food 
+image 483108: a person riding a bike next to a train 
+image 384213: a kitchen with a sink and a window 
+image 386164: a wooden table topped with lots of wooden spooning 
+image 223648: a wooden table topped with a wooden chair 
+image 403385: a white toilet sitting next to a white sink 
+image 294832: a bathroom with a toilet sink and shower 
+image 462565: a group of people riding bikes down a street 
+image 436141: a bathroom with a toilet sink and mirror 
+image 192440: a bathroom with a toilet sink and mirror 
+image 1146: a man in a suit and tie posing for a picture 
+image 559665: a man riding a motorcycle down a street 
+image 394240: a row of motorcycles parked next to a building 
+image 491497: a bedroom with a bed and a television 
+image 184791: a painting of a bowl of fruit on a table 
+image 579664: a bunch of banana that are on a table 
+image 550529: a motorcycle is parked on a shelf in a room 
+image 348881: a large jet sitting on top of a tarmac 
+image 560623: a view from a window of an airport window 
+Total image to be evaluated 5000
+loading annotations into memory...
+Done (t=0.37s)
+creating index...
+index created!
+using 5000/5000 predictions
+Loading and preparing results...
+DONE (t=0.11s)
+creating index...
+index created!
+tokenization...
+setting up scorers...
+computing Bleu score...
+{'testlen': 45273, 'reflen': 45642, 'guess': [45273, 40273, 35273, 30273], 'correct': [34171, 18526, 9209, 4454]}
+ratio: 0.9919153411331452
+Bleu_1: 0.749
+Bleu_2: 0.584
+Bleu_3: 0.446
+Bleu_4: 0.337
+computing Rouge score...
+ROUGE_L: 0.550
+computing CIDEr score...
+CIDEr: 1.040
+Saving the predictions
+print the evaluation:
+Bleu_1:0.7486497334210672
+Bleu_2:0.5844579975714204
+Bleu_3:0.44556627880178823
+Bleu_4:0.3370722417020547
+ROUGE_L:0.5504602822254832
+CIDEr:1.0404756257457548
