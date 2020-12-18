@@ -37,4 +37,3 @@ Evaluation codes for MS COCO caption generation.
 
 ## Acknowledgement ##
 Many thanks to Xinlei Chen et al for providing coco evaluation code from [here](https://github.com/peteanderson80/coco-caption).
-

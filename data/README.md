@@ -4,7 +4,7 @@
 - COCO: Download coco images from [link](http://cocodataset.org/#download), we need `2014 training` images and `2014 val` images. You should put the image in some directory, denoted as `$IMAGE_ROOT`.
 
 ### Pretrained CNN weight
-- Download pretrained CNN weight from [link](https://download.pytorch.org/models/resnet101-5d3b4d8f.pth), and put it into `imagenet_weights/`
+- Download pretrained CNN weight from [link](https://download.pytorch.org/models/resnet101-5d3b4d8f.pth), rename to `resnet101.pth` and put it into `imagenet_weights/`
 
 ### COCO
 
